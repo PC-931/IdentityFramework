@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RecruitmentSystem.Models.Vacancy>
+
+@{
+    ViewBag.Title = "ShowAllVacancy";
+}
+
+<h2>ShowAllVacancy</h2>
+
+<p>
+    @Html.ActionLink("Add Vacancy", "AddVacancy")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditVacancy", new { id=item.id }) |
+            @Html.ActionLink("Details", "DetailsOfVacancy", new { id=item.id }) |
+            @Html.ActionLink("Delete", "DeleteVacancy", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

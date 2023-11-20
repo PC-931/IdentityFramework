@@ -330,6 +330,9 @@
     <Content Include="Views\Agency\Register.cshtml" />
     <Content Include="Views\Agency\Dashboard.cshtml" />
     <Content Include="Views\Vacancy\AddVacancy.cshtml" />
+    <Content Include="Views\Vacancy\ShowAllVacancy.cshtml" />
+    <Content Include="Views\Vacancy\EditVacancy.cshtml" />
+    <Content Include="Views\Vacancy\DetailsOfVacancy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

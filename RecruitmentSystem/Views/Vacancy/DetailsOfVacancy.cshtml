@@ -1,0 +1,58 @@
+﻿@model RecruitmentSystem.Models.Vacancy
+
+@{
+    ViewBag.Title = "DetailsOfVacancy";
+}
+
+<h2>DetailsOfVacancy</h2>
+
+<div>
+    <h4>Vacancy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditVacancy", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Dashboard", "Agency")
+</p>
