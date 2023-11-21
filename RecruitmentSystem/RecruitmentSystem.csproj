@@ -236,6 +236,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgencyController.cs" />
+    <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VacancyController.cs" />
@@ -270,10 +271,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\AgencyDbContext.cs" />
+    <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\CandidateDbContext.cs" />
     <Compile Include="Models\Vacancy.cs" />
-    <Compile Include="Models\VacancyDbContext.cs" />
+    <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +353,8 @@
     <Content Include="Views\Candidate\Login.cshtml" />
     <Content Include="Views\Candidate\Register.cshtml" />
     <Content Include="Views\Candidate\Dashboard.cshtml" />
+    <Content Include="Views\Applicant\ShowAllApplicant.cshtml" />
+    <Content Include="Views\Vacancy\ShowVacancyToCandidate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

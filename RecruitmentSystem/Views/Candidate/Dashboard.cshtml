@@ -1,12 +1,14 @@
-﻿
+﻿@model RecruitmentSystem.Models.Candidate
+
 @{
     ViewBag.Title = "Dashboard";
 }
 
 <h2>Dashboard</h2>
-
+<h6> Hi! @Model.UserName</h6>
+<p> @Html.ActionLink("LogOut", "Logout", "Candidate")</p>
 <ul>
     <li>
-        @Html.ActionLink("Show Vacancy", "ShowAllVacancy", "Vacancy");
+        @Html.ActionLink("Show Vacancy", "ShowVacancyToCandidate", "Vacancy");
     </li>
 </ul>

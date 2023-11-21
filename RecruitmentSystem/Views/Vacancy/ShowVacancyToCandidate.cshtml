@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<RecruitmentSystem.Models.Vacancy>
 
 @{
-    ViewBag.Title = "ShowAllVacancy";
+    ViewBag.Title = "ShowVacancyToCandidate";
 }
 
-<h2>Vacancy List</h2>
+<h2>ShowVacancyToCandidate</h2>
 
-<p>
-    @Html.ActionLink("Add Vacancy", "AddVacancy")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -47,9 +44,8 @@
             @Html.DisplayFor(modelItem => item.Salary)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditVacancy", new { id=item.id }) |
-            @Html.ActionLink("Details", "DetailsOfVacancy", new { id=item.id }) |
-            @Html.ActionLink("Delete", "DeleteVacancy", new { id=item.id })
+            @Html.ActionLink("Apply", "AppliedByCandidate", "Applicant", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) 
         </td>
     </tr>
 }

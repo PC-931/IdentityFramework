@@ -71,9 +71,14 @@ namespace RecruitmentSystem.Controllers
             return View();
         }
 
-        public ActionResult Dashboard()
+        public ActionResult Dashboard(Candidate c)
         {
-            return View() ;
+            return View(c) ;
+        }
+
+        public ActionResult Logout()
+        {
+            return RedirectToAction("Login", "Candidate");
         }
     }
 }

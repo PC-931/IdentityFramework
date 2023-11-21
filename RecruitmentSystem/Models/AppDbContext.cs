@@ -2,13 +2,14 @@
 
 namespace RecruitmentSystem.Models
 {
-    public class VacancyDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public VacancyDbContext() : base("HireIN")
+        public AppDbContext() : base("HireIN")
         {            
         }
 
         public DbSet<Vacancy> vacancies { get; set; }
+        public DbSet<Applicant> applicants { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -11,11 +11,11 @@ namespace RecruitmentSystem.Controllers
     {
         List<Vacancy> vacancyList;
         Vacancy v;
-        public VacancyDbContext db;
+        public AppDbContext db;
 
         public VacancyController() 
         { 
-            db = new VacancyDbContext();
+            db = new AppDbContext();
             vacancyList = new List<Vacancy>();
             v = new Vacancy();
         }
@@ -127,6 +127,26 @@ namespace RecruitmentSystem.Controllers
                 throw new Exception (e.Message);
             }
             return RedirectToAction("ShowAllVacancy");
+        }
+
+        public ActionResult ShowVacancyToCandidate()
+        {
+            try
+            {
+                vacancyList = db.vacancies.ToList();
+                if (vacancyList.Count > 0)
+                {
+                    return View(vacancyList);
+                }
+                else
+                {
+                    return RedirectToAction("Dashboard", "Candidate");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
