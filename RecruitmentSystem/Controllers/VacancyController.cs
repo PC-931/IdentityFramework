@@ -2,18 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace RecruitmentSystem.Controllers
 {
-    [Authorize]
     public class VacancyController : Controller
     {
         List<Vacancy> vacancyList;
         Vacancy v;
         public VacancyDbContext db;
+
         public VacancyController() 
         { 
             db = new VacancyDbContext();
@@ -33,7 +32,7 @@ namespace RecruitmentSystem.Controllers
         {
             db.vacancies.Add(v);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("ShowAllVacancy");
         }
 
         public ActionResult ShowAllVacancy()
@@ -47,13 +46,13 @@ namespace RecruitmentSystem.Controllers
                 }
                 else
                 {
-                    return View();
+                    return RedirectToAction("Dashboard","Agency");
                 }
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
-            
+            }            
         }
 
         [HttpGet]
@@ -130,5 +129,4 @@ namespace RecruitmentSystem.Controllers
             return RedirectToAction("ShowAllVacancy");
         }
     }
-
 }

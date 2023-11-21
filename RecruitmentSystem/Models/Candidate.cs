@@ -2,7 +2,7 @@
 
 namespace RecruitmentSystem.Models
 {
-    public class Agency : IdentityUser
+    public class Candidate : IdentityUser
     {
         public string password { get; set; }
     }

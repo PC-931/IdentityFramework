@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace RecruitmentSystem.Models
 {
     public class VacancyDbContext : DbContext
     {
-        public VacancyDbContext() : base("NewDB")
+        public VacancyDbContext() : base("HireIN")
         {            
         }
 
@@ -18,6 +14,5 @@ namespace RecruitmentSystem.Models
         {
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }

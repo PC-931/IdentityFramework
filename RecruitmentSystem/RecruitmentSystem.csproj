@@ -236,6 +236,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AgencyController.cs" />
+    <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VacancyController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -254,9 +255,23 @@
     <Compile Include="Migrations\202311191932111_added vacancy table.designer.cs">
       <DependentUpon>202311191932111_added vacancy table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311211603435_added candidate.cs" />
+    <Compile Include="Migrations\202311211603435_added candidate.designer.cs">
+      <DependentUpon>202311211603435_added candidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311211619431_db update.cs" />
+    <Compile Include="Migrations\202311211619431_db update.designer.cs">
+      <DependentUpon>202311211619431_db update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311211638064_db changed.cs" />
+    <Compile Include="Migrations\202311211638064_db changed.designer.cs">
+      <DependentUpon>202311211638064_db changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\AgencyDbContext.cs" />
+    <Compile Include="Models\Candidate.cs" />
+    <Compile Include="Models\CandidateDbContext.cs" />
     <Compile Include="Models\Vacancy.cs" />
     <Compile Include="Models\VacancyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -333,6 +348,9 @@
     <Content Include="Views\Vacancy\ShowAllVacancy.cshtml" />
     <Content Include="Views\Vacancy\EditVacancy.cshtml" />
     <Content Include="Views\Vacancy\DetailsOfVacancy.cshtml" />
+    <Content Include="Views\Candidate\Login.cshtml" />
+    <Content Include="Views\Candidate\Register.cshtml" />
+    <Content Include="Views\Candidate\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -417,6 +435,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311191932111_added vacancy table.resx">
       <DependentUpon>202311191932111_added vacancy table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311211603435_added candidate.resx">
+      <DependentUpon>202311211603435_added candidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311211619431_db update.resx">
+      <DependentUpon>202311211619431_db update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311211638064_db changed.resx">
+      <DependentUpon>202311211638064_db changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

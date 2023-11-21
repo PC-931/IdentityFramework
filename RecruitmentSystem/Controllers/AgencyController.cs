@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Extensions.Logging;
 using RecruitmentSystem.Models;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -32,7 +31,7 @@ namespace RecruitmentSystem.Controllers
             Agency usr = um.Find(a.UserName, a.password);
             if (usr != null)
             {
-                FormsAuthentication.SetAuthCookie(a.UserName, false);
+                //FormsAuthentication.SetAuthCookie(a.UserName, false);
                 return RedirectToAction("Dashboard", a);
             }
             else
@@ -64,7 +63,7 @@ namespace RecruitmentSystem.Controllers
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult Dashboard(Agency a)
         {
@@ -73,7 +72,7 @@ namespace RecruitmentSystem.Controllers
 
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
+            //FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
     }
