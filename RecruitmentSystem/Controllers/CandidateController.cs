@@ -2,6 +2,8 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using RecruitmentSystem.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace RecruitmentSystem.Controllers
@@ -12,12 +14,19 @@ namespace RecruitmentSystem.Controllers
         UserStore<Candidate> us;
         UserManager<Candidate> um;
 
-
+        public VacancyDbContext vacDb;
+        public ApplicantDbContext appDb;
+        public Applicant app;
         public CandidateController()
         {
             db = new CandidateDbContext();
             us = new UserStore<Candidate>(db);
             um = new UserManager<Candidate>(us);
+
+            vacDb = new VacancyDbContext();
+            appDb = new ApplicantDbContext();
+
+            app = new Applicant();
         }
 
         [HttpGet]
@@ -32,6 +41,7 @@ namespace RecruitmentSystem.Controllers
             Candidate exC = um.Find(c.UserName, c.password);
             if (exC != null) 
             {
+                Session["cid"] = exC.Id;
                 //FormsAuthentication.SetAuthCookie(c.UserName, false);
                 return RedirectToAction("Dashboard",exC);
             }
@@ -57,7 +67,7 @@ namespace RecruitmentSystem.Controllers
                 IdentityResult res = um.Create(c, c.password);
                 if (res.Succeeded)
                 {
-                    return View("Login");
+                    return RedirectToAction("Login");
                 }
                 else
                 {
@@ -78,7 +88,52 @@ namespace RecruitmentSystem.Controllers
 
         public ActionResult Logout()
         {
+            Session.Clear();
             return RedirectToAction("Login", "Candidate");
+        }
+
+        public ActionResult ShowVacancyToCandidate()
+        {
+            try
+            {
+                List<Vacancy> v = new List<Vacancy> ();
+                v = vacDb.vacancies.ToList();
+
+                if(v.Count > 0)
+                {
+                    return View(v);
+                }
+                else
+                {
+                    TempData["err"] = "some Error occured!!!";
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return RedirectToAction("Dashboard");
+        }
+
+        [HttpGet]
+        public ActionResult CandidateApplied(int id)
+        {
+            try
+            {                
+                app.CandidateId = Session["cid"].ToString();
+                app.VacancyId = id;
+                app.Status = "Applied";
+
+                appDb.applicants.Add(app);
+                appDb.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

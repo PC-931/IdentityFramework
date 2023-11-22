@@ -11,11 +11,11 @@ namespace RecruitmentSystem.Controllers
     {
         List<Vacancy> vacancyList;
         Vacancy v;
-        public AppDbContext db;
+        public VacancyDbContext db;
 
         public VacancyController() 
         { 
-            db = new AppDbContext();
+            db = new VacancyDbContext();
             vacancyList = new List<Vacancy>();
             v = new Vacancy();
         }
@@ -23,6 +23,7 @@ namespace RecruitmentSystem.Controllers
         [HttpGet]
         public ActionResult AddVacancy()
         {
+            ViewBag.AgentId = Session["aid"];
             return View();
         }
 
@@ -148,5 +149,7 @@ namespace RecruitmentSystem.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+       
     }
 }

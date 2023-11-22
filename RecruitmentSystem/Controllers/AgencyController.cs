@@ -31,6 +31,7 @@ namespace RecruitmentSystem.Controllers
             Agency usr = um.Find(a.UserName, a.password);
             if (usr != null)
             {
+                Session["aid"] = a.Id;
                 //FormsAuthentication.SetAuthCookie(a.UserName, false);
                 return RedirectToAction("Dashboard", a);
             }
@@ -72,6 +73,7 @@ namespace RecruitmentSystem.Controllers
 
         public ActionResult Logout()
         {
+            Session.Clear();
             //FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }

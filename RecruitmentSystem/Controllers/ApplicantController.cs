@@ -9,14 +9,14 @@ namespace RecruitmentSystem.Controllers
 {
     public class ApplicantController : Controller
     {
-        private AppDbContext db;
+        private ApplicantDbContext db;
         List<Applicant> applicants;
         Applicant a;
 
 
         public ApplicantController()
         {
-            db = new AppDbContext();
+            db = new ApplicantDbContext();
             applicants = new List<Applicant>();
             a = new Applicant();
         }
@@ -26,18 +26,19 @@ namespace RecruitmentSystem.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult AppliedByCandidate(int cid)
-        {
-            try
-            {
-               
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return View(id);
-        }
+        //[HttpPost]
+        //public ActionResult AppliedByCandidate(int cid)
+        //{
+        //    try
+        //    {
+
+        //        return View();
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //    return View(cid);
+        //}
     }
 }

@@ -1,14 +1,17 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
 
 namespace RecruitmentSystem.Models
 {
-    public class AppDbContext : DbContext
+    public class ApplicantDbContext : DbContext
     {
-        public AppDbContext() : base("HireIN")
-        {            
+        public ApplicantDbContext() : base("HireIN")
+        {
         }
 
-        public DbSet<Vacancy> vacancies { get; set; }
         public DbSet<Applicant> applicants { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
