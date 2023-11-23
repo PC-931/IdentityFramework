@@ -262,9 +262,13 @@
     <Compile Include="Migrations\202311191841131_dbcontext changed.designer.cs">
       <DependentUpon>202311191841131_dbcontext changed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311222100436_ApplicantDbContext.cs" />
-    <Compile Include="Migrations\202311222100436_ApplicantDbContext.designer.cs">
-      <DependentUpon>202311222100436_ApplicantDbContext.cs</DependentUpon>
+    <Compile Include="Migrations\202311221954147_InitialCreate.cs" />
+    <Compile Include="Migrations\202311221954147_InitialCreate.designer.cs">
+      <DependentUpon>202311221954147_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311222117566_agencyUpdated.cs" />
+    <Compile Include="Migrations\202311222117566_agencyUpdated.designer.cs">
+      <DependentUpon>202311222117566_agencyUpdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -377,6 +381,7 @@
     <Content Include="Views\Applicant\ShowAllApplicant.cshtml" />
     <Content Include="Views\Candidate\ShowVacancyToCandidate.cshtml" />
     <Content Include="Views\Candidate\CandidateApplied.cshtml" />
+    <Content Include="Views\Agency\ShowAllApplicant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -393,8 +398,11 @@
     <EmbeddedResource Include="Migrations\202311191841131_dbcontext changed.resx">
       <DependentUpon>202311191841131_dbcontext changed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311222100436_ApplicantDbContext.resx">
-      <DependentUpon>202311222100436_ApplicantDbContext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311221954147_InitialCreate.resx">
+      <DependentUpon>202311221954147_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311222117566_agencyUpdated.resx">
+      <DependentUpon>202311222117566_agencyUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

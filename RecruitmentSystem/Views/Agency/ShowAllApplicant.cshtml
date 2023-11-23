@@ -1,0 +1,44 @@
+﻿@model IEnumerable<RecruitmentSystem.Models.Applicant>
+
+@{
+    ViewBag.Title = "ShowAllApplicant";
+}
+
+<h2>ShowAllApplicant</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CandidateId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VacancyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CandidateId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VacancyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Accept", "CandidateAccepted", new { id=item.id }) |
+            @Html.ActionLink("Reject", "CandidateRejected", new { id=item.id }) 
+        </td>
+    </tr>
+}
+
+</table>
